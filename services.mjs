@@ -1,7 +1,9 @@
 export class Services {
 
+    //initialize todolist
     todolist = ["Working", "Gaming", "Gym"];
 
+    //return json format of todolist
     getJsonTodoList() {
         return JSON.stringify({
             code: 200,
@@ -15,11 +17,14 @@ export class Services {
         });
     }
 
+    //get todolist
     getTodoList(request, response) {
         response.write(this.getJsonTodoList());
         response.end();
     }
 
+
+    //create todo
     createTodo(request, response) {
         request.addListener("data", (data) => {
             const body = JSON.parse(data.toString());
@@ -30,6 +35,8 @@ export class Services {
         })
     }
 
+
+    //update todo
     updateTodo(request, response) {
         request.addListener("data", (data) => {
             const body = JSON.parse(data.toString());
@@ -42,6 +49,8 @@ export class Services {
         })
     }
 
+
+    //delete todo
     deleteTodo(request, response){
         request.addListener("data", (data) => {
             const body = JSON.parse(data.toString());
