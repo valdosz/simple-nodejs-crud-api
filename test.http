@@ -1,0 +1,32 @@
+GET http://localhost:8000
+
+###
+
+POST http://localhost:8000
+Content-Type: application/json
+Accept: application/json
+
+{
+  "todo": "Test NodeJS"
+}
+
+###
+
+PUT http://localhost:8000
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id" : 2,
+  "todo" : "Test Ketiga"
+}
+
+###
+
+DELETE http://localhost:8000
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id" : 2
+}
